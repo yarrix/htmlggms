@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drop N Merge</title>
+	<meta charset="utf-8">
+	<!-- Allow fullscreen mode on iOS devices. (These are Apple specific meta tags.) -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="apple-touch-icon" sizes="256x256" href="img/icon.png" />
+	<meta name="HandheldFriendly" content="true" />
+	
+	<!-- Chrome for Android web app tags -->
+	<meta name="mobile-web-app-capable" content="yes" />
+	<link rel="shortcut icon" sizes="256x256" href="img/icon.png" />
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		html, body {
+			overflow: hidden;
+			touch-action: none;
+			-ms-touch-action: none;
+		}
+		body {
+			background-image: url('img/cover.png');
+			background-size: contain;
+			background-color: #000000;
+		}
+		canvas {
+			touch-action-delay: none;
+			touch-action: none;
+			-ms-touch-action: none;
+		}
+		@font-face {
+		  font-family: 'vanilla';
+		  font-style: normal;
+		  font-weight: 400;
+		  src: url(font/vanilla-extract.ttf) format('truetype');
+		}
+	</style>
+	<script type="text/javascript" src="../phaser.min.js"></script>
+</head>
+<body>
+	<div id="game_content"></div>
+	<div style="font-family:vanilla; position:absolute; left:-1000px; visibility:hidden;">.</div>
+	<script type="text/javascript" src="scripts/boot.js"></script>
+	<script type="text/javascript" src="scripts/preload.js"></script>
+	<script type="text/javascript" src="scripts/menu.js"></script>
+	<script type="text/javascript" src="scripts/game.js"></script>
+</body>
+</html>
