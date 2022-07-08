@@ -1,0 +1,68 @@
+root { 
+    display: block;
+}
+
+body{
+    background-color: #000;
+    background-repeat: repeat-x;
+    background-position: top;   
+}
+
+*, *:before, *:after {
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+    
+input, input:before, input:after {
+   -webkit-user-select: initial;
+   -khtml-user-select: initial;
+   -moz-user-select: initial;
+   -ms-user-select: initial;
+   user-select: initial;
+}
+
+::selection { background: transparent;color:inherit; }
+::-moz-selection { background: transparent;color:inherit; }
+
+#canvas{
+    position: fixed;
+}
+
+canvas {
+    image-rendering: optimizeSpeed;
+    image-rendering:-o-crisp-edges;
+    image-rendering:-webkit-optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+	-ms-touch-action: none;
+}
+
+.ani_hack{
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent; /* mobile webkit */
+}
+
+/***************FONTS*******************/
+
+
+@font-face {
+    font-family: 'SHMUP in the zone';
+    src: url('subset-SHMUP-in-the-zone.eot');
+    src: url('subset-SHMUP-in-the-zone.eot?#iefix') format('embedded-opentype'),
+        url('subset-SHMUP-in-the-zone.woff2') format('woff2'),
+        url('subset-SHMUP-in-the-zone.woff') format('woff'),
+        url('subset-SHMUP-in-the-zone.svg#SHMUP-in-the-zone') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
