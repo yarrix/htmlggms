@@ -1,0 +1,310 @@
+@import url("font-awesome/css/font-awesome.css");
+
+solitaire,
+.html5-solitaire {
+    position: relative;
+    display: block;
+    font-family: Helvetica, Arial;
+    color: white;
+    font-weight: bolder;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    z-index: 1000;
+}
+
+#html5-solitaire-board:after {
+    content: 'loading...';
+    margin-top: 100px;
+    display: block;
+    text-align: center;
+}
+
+solitaire ul,
+.html5-solitaire ul {
+    list-style: none;
+}
+
+solitaire canvas,
+.html5-solitaire canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+solitaire button,
+.html5-solitaire button {
+    border: 0;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    width: 30px;
+    font-size: 20px;
+    line-height: 15px;
+    color: white;
+}
+
+/* TOPBAR */
+#html5-solitaire-topbar {
+    position: absolute;
+    width: 100%;
+    background: rgba(0, 0, 0, .8);
+    z-index: 1000;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+}
+
+#html5-solitaire-topbar li {
+    padding: 0;
+    margin: 0;
+    margin-top: 4px;
+    float: left;
+}
+
+#html5-solitaire-topbar #html5-solitaire-options {
+    cursor: pointer;
+    margin-top: 0;
+}
+
+#html5-solitaire-topbar #html5-solitaire-score {
+    margin-right: 10px;
+    text-align: right;
+}
+
+#html5-solitaire-topbar #html5-solitaire-undo {
+    margin-top: 0;
+    width: auto;
+    display: inline-block;
+    float: none;
+}
+
+#html5-solitaire-topbar #html5-solitaire-undo button {
+    width: auto;
+}
+
+#html5-solitaire-topbar #html5-solitaire-undo button span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#html5-solitaire-score {
+    float: right !important;
+    width: 100px;
+}
+
+/* Sidebar */
+#html5-solitaire-sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 160px;
+    padding: 0;
+    padding-top: 46px;
+    background: #222;
+    margin: 0;
+}
+
+.icon-volume-off {
+    padding-right: 15px!important;
+}
+
+.icon-check-sign {
+    padding-right: 4px!important;
+}
+
+#html5-solitaire-sidebar button {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    text-shadow: 0 1px 0 black;
+    padding: 0;
+    padding-left: 20px;
+    text-align: left;
+}
+
+#html5-solitaire-sidebar button:hover {
+    font-size: 16px;
+}
+
+#html5-solitaire-sidebar li {
+    font-size: 15px;
+    line-height: 40px;
+}
+
+#html5-solitaire-sidebar i {
+    font-size: 20px;
+    line-height: 40px;
+    padding-right: 5px;
+}
+
+/* SIDEBAR */
+#html5-solitaire-sidebar {
+    -webkit-transform: translateX(-160px);
+       -moz-transform: translateX(-160px);
+        -ms-transform: translateX(-160px);
+         -o-transform: translateX(-160px);
+            transform: translateX(-160px);
+    -webkit-transition: all .4s ease-in;
+       -moz-transition: all .4s ease-in;
+         -o-transition: all .4s ease-in;
+            transition: all .4s ease-in;
+}
+
+#html5-solitaire-sidebar li {
+    -webkit-transform: translateX(300px);
+       -moz-transform: translateX(300px);
+        -ms-transform: translateX(300px);
+         -o-transform: translateX(300px);
+            transform: translateX(300px);
+    -webkit-transition: all .4s ease-in;
+       -moz-transition: all .4s ease-in;
+         -o-transition: all .4s ease-in;
+            transition: all .4s ease-in;
+}
+
+#html5-solitaire-board {
+    height: 100%;
+    position: absolute;
+    background: #333;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .9);
+    -webkit-transition: all .4s ease-in;
+       -moz-transition: all .4s ease-in;
+         -o-transition: all .4s ease-in;
+            transition: all .4s ease-in;
+}
+
+#checkbox { display: none; }
+
+.html5-solitaire-show-sidebar #html5-solitaire-sidebar {
+    -webkit-transform: translateX(0);
+       -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+         -o-transform: translateX(0);
+            transform: translateX(0);
+}
+
+.html5-solitaire-show-sidebar #html5-solitaire-sidebar li {
+    -webkit-transform: translateX(0);
+       -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+         -o-transform: translateX(0);
+            transform: translateX(0);
+}
+
+.html5-solitaire-show-sidebar #html5-solitaire-board {
+    -webkit-transform: translateX(160px);
+       -moz-transform: translateX(160px);
+        -ms-transform: translateX(160px);
+         -o-transform: translateX(160px);
+            transform: translateX(160px);
+}
+
+.html5-solitaire-show-sidebar canvas {
+    -webkit-pointer-events: none !important;
+            pointer-events: none !important;
+}
+
+.html5-solitaire-show-sidebar #html5-solitaire-sidebar li:nth-child(1) {
+    -webkit-transition-delay: .04s;
+    -moz-transition-delay: .04s
+}
+
+.html5-solitaire-show-sidebar #html5-solitaire-sidebar li:nth-child(2) {
+    -webkit-transition-delay: .08s;
+    -moz-transition-delay: .08s
+}
+
+.html5-solitaire-show-sidebar #html5-solitaire-sidebar li:nth-child(3) {
+    -webkit-transition-delay: .16s;
+    -moz-transition-delay: .16s
+}
+
+.html5-solitaire-show-sidebar #html5-solitaire-sidebar li:nth-child(4) {
+    -webkit-transition-delay: .24s;
+    -moz-transition-delay: .24s
+}
+
+#html5-solitaire-dialog {
+    position: absolute;
+    top: -500px;
+    left: 50%;
+    margin-left: -150px;
+    display: inline-block;
+    background: #333;
+    color: white;
+    width: 260px;
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 0 0 5px 5px;
+    -webkit-transition: top .3s ease-in;
+       -moz-transition: top .3s ease-in;
+         -o-transition: top .3s ease-in;
+            transition: top .3s ease-in;
+    text-align: left;
+    border: 1px dashed white;
+    text-shadow: 0 1px 0 #333;
+    box-shadow: 0 0 10px rgba(0, 100, 0, .4);
+}
+
+#html5-solitaire-dialog-close {
+    width: 100%;
+    background: silver;
+    background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+    padding: 10px;
+    color: #333;
+}
+#html5-solitaire-dialog h1 {
+    text-align: center;
+    margin-top: 0;
+}
+
+#html5-solitaire-dialog table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    border-radius: 2px;
+}
+
+#html5-solitaire-dialog table tr:hover {
+    background: #131313;
+    cursor: pointer;
+}
+
+body.html5-solitaire-show-modal #html5-solitaire-dialog {
+    top: -2px;
+}
+
+body.html5-solitaire-show-modal #html5-solitaire-overlay,
+body.html5-solitaire-show-sidebar #html5-solitaire-board-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 1000;
+}
+
+#html5-solitaire-reset-stats {
+    text-align: right;
+    color: #00dd33;
+    text-decoration: none;
+    border-bottom: 1px dotted white;
+    margin-bottom: 10px;
+    width: auto;
+    font-size: 16px;
+    padding: 0;
+}
